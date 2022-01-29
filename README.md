@@ -1,5 +1,5 @@
-# revoltdiscordbridge
-A bridge between revolt and discord
+# Revolt Discord Bridge
+A bridge between revolt and discord using [revchatapi](https://www.npmjs.com/package/revchatapi)
 
 ## How to use?
 ### Setup
