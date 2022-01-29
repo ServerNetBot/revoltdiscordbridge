@@ -31,4 +31,21 @@ Client.on('message', (msg) => {
     }
 })
 
+client.on('message', (msg) => {
+    if(!discordChannels.includes(msg.channel.id)) return;
+    if(msg.author.bot) return;
+    
+    let rcnt = `[REVOLT] **${msg.author.tag}:** ${msg.content}`;
+    let dcnt = `[REVOLT] **${msg.author.tag}:** ${msg.content}`;
+
+    for (const channelID of revChannels) {
+        Client.sendToChannel(channelID, { content: rcnt });
+    }
+    for (const channelID of discordChannels) {
+        const channel = client.channels.cache.get(channelID) || client.channels.fetch(channelID).catch((e) => { console.log(e); return });
+
+        channel.send({ content: dcnt });
+    }
+})
+
 client.login(discord)
