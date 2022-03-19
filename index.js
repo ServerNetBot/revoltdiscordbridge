@@ -1,4 +1,4 @@
-const mod = require('revcjatapi');
+const mod = require('revchatapi');
 const revolt = ""; // Revolt Bot Token
 const discord = ""; // Discord Bot Token
 const revChannels = []; // Revolt channels
