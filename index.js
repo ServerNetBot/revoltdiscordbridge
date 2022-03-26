@@ -18,8 +18,8 @@ Client.on('message', (msg) => {
     if (!revChannels.includes(msg.channel.id)) return;
     if (msg.author.isBot) return;
 
-    let rcnt = `[REVOLT] **@${msg.author.username}:** ${msg.content}`;
-    let dcnt = `[REVOLT] **@${msg.author.username}:** ${msg.content}`;
+    let rcnt = `[DISCORD] **@${msg.author.username}:** ${msg.content}`;
+    let dcnt = `[DISCORD] **@${msg.author.username}:** ${msg.content}`;
 
     for (const channelID of revChannels) {
         Client.sendToChannel(channelID, { content: rcnt });
