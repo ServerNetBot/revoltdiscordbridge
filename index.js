@@ -18,8 +18,8 @@ Client.on('message', (msg) => {
     if (!revChannels.includes(msg.channel.id)) return;
     if (msg.author.isBot) return;
 
-    let rcnt = `[DISCORD] **@${msg.author.username}:** ${msg.content}`;
-    let dcnt = `[DISCORD] **@${msg.author.username}:** ${msg.content}`;
+    let rcnt = `[REVOLT] **@${msg.author.username}:** ${msg.content}`;
+    let dcnt = `[REVOLT] **@${msg.author.username}:** ${msg.content}`;
 
     for (const channelID of revChannels) {
         Client.sendToChannel(channelID, { content: rcnt });
@@ -35,8 +35,8 @@ client.on('message', (msg) => {
     if(!discordChannels.includes(msg.channel.id)) return;
     if(msg.author.bot) return;
     
-    let rcnt = `[REVOLT] **${msg.author.tag}:** ${msg.content}`;
-    let dcnt = `[REVOLT] **${msg.author.tag}:** ${msg.content}`;
+    let rcnt = `[DISCORD] **${msg.author.tag}:** ${msg.content}`;
+    let dcnt = `[DISCORD] **${msg.author.tag}:** ${msg.content}`;
 
     for (const channelID of revChannels) {
         Client.sendToChannel(channelID, { content: rcnt });
